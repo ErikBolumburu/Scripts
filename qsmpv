@@ -1,0 +1,4 @@
+#!/bin/bash
+links=$(lynx -listonly -nonumbers -dump "$1" | sed '1,5d')
+
+mpv $links

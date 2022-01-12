@@ -1,0 +1,12 @@
+#!/bin/bash
+read -r -p "Flatten $(pwd 2>&1) ? [y/N] " response
+case "$response" in
+    [yY][eE][sS]|[yY])
+	for d in ./*/ ; do (cd "$d" && mv * ../); done
+	for d in ./*/ ; do (rm -r "$d"); done
+	echo "Flattened $(pwd 2>&1)"
+        ;;
+    *)
+	    echo "Did not flatten $(pwd 2>&1)"
+        ;;
+esac

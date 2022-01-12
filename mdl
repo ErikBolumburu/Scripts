@@ -1,0 +1,2 @@
+#!/bin/bash
+mangodl -D "$1" -o cbz
